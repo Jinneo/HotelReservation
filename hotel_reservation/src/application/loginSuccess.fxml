@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginSuccess">
+   <children>
+      <Label layoutX="234.0" layoutY="14.0" text="Options">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Button layoutX="533.0" layoutY="20.0" mnemonicParsing="false" onAction="#goBackHome" prefHeight="31.0" prefWidth="35.0" style="-fx-background-color: deepskyblue;">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/home-outline.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="rwdpt" layoutX="204.0" layoutY="296.0" text="Reward Points: ">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="21.0" layoutY="341.0" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: deepskyblue;" text="10% Discount(1000 RP)" />
+      <JFXButton layoutX="224.0" layoutY="341.0" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: deepskyblue;" text="15% Discount(1700 RP)" />
+      <JFXButton layoutX="423.0" layoutY="341.0" prefHeight="37.0" prefWidth="155.0" style="-fx-background-color: deepskyblue;" text="20% Discount(2600 RP)" />
+      <TabPane fx:id="ReservationOpts" layoutX="140.0" layoutY="64.0" prefHeight="210.0" prefWidth="317.0" style="-fx-border-color: black;" tabClosingPolicy="UNAVAILABLE" />
+      <GridPane fx:id="newGP" layoutX="10.0" layoutY="89.0" prefHeight="0.0" prefWidth="171.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

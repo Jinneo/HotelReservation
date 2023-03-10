@@ -1,0 +1,58 @@
+"UserID","Startdate","Enddate","InBetween","RoomNo","RoomPrices","TV","RS","PA","RMP","PMP","NM","M","TCOST","CheckedIn","Canceled"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","615","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room D","Rate: 175$ a night
+Two Bedroom, City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","175","true","PLACE_HOLDER"
+"CHECKED_OUT","2023-03-26","2023-03-29","3","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","1050","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-28","2","Room D","Rate: 175$ a night
+Two Bedroom, City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","350","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-27","2023-03-30","3","Room C","Rate: 200$ a night
+Two Bedroom, Ocean View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","865","PLACE_HOLDER","ONTIME"
+"CHECKED_OUT","2023-03-27","2023-03-30","3","Room B","Rate: 250$ a night
+Two Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","1015","PLACE_HOLDER","ONTIME"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room C","Rate: 200$ a night
+Two Bedroom, Ocean View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","200","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room B","Rate: 250$ a night
+Two Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","515","true","PLACE_HOLDER"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","350","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room D","Rate: 175$ a night
+Two Bedroom, City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","440","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room B","Rate: 250$ a night
+Two Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","250","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","350","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","350","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-26","2023-03-27","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","350","PLACE_HOLDER","LATE"
+"CHECKED_OUT","2023-03-31","2023-04-01","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","falseTV","falseRoom Service","falsePool Access","falseRegular Meal Plan","falsePremium Meal Plan","falseNo Membership","falseMembership","350","PLACE_HOLDER","ONTIME"
+"v2v33w==","2023-03-27","2023-03-28","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","615","PLACE_HOLDER","PLACE_HOLDER"
+"oBRTZw==","2023-03-27","2023-03-28","1","Room B","Rate: 250$ a night
+Two Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","515","PLACE_HOLDER","PLACE_HOLDER"
+"fGf9QA==","2023-03-27","2023-03-28","1","Room C","Rate: 200$ a night
+Two Bedroom, Ocean View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","465","PLACE_HOLDER","PLACE_HOLDER"
+"rKmuag==","2023-03-29","2023-04-03","5","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","2015","PLACE_HOLDER","PLACE_HOLDER"

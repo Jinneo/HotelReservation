@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DateHotel">
+   <children>
+      <Label layoutX="187.0" layoutY="45.0" prefHeight="71.0" prefWidth="227.0" text="Book a Hotel">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="141.0" text="Start Date" />
+      <DatePicker fx:id="startDate" layoutX="242.0" layoutY="137.0" onAction="#datesChanged" />
+      <Label layoutX="163.0" layoutY="192.0" text="End Date" />
+      <DatePicker fx:id="endDate" layoutX="242.0" layoutY="187.0" />
+      <JFXButton layoutX="173.0" layoutY="240.0" onAction="#moveOn" prefHeight="37.0" prefWidth="255.0" style="-fx-background-color: deepskyblue;" text="Confirm" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Terms">
+   <children>
+      <Label layoutX="60.0" layoutY="34.0" text="TERMS AND CONDITIONS">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Label>
+      <JFXCheckBox layoutX="156.0" layoutY="344.0" text="I have read and understood the terms and conditions" />
+      <JFXButton layoutX="277.0" layoutY="370.0" onAction="#moveTo" style="-fx-background-color: deepskyblue;" text="Continue" />
+      <ScrollPane layoutX="68.0" layoutY="100.0" prefHeight="224.0" prefWidth="481.0">
+         <content>
+            <Pane prefHeight="467.0" prefWidth="464.0">
+               <children>
+                  <Label layoutX="43.0" layoutY="14.0" prefHeight="148.0" prefWidth="379.0" text="The simulation is NOT based on real-time. &#10;However, it can be set back to real time but that means &#10;that all events in simulation will be destroyed and you will &#10;start with a blank pallete.&#10;" textAlignment="CENTER" textOverrun="CLIP">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="69.0" prefHeight="39.0" prefWidth="366.0" text="SECTION I - Simulator Information">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="69.0" layoutY="152.0" text="Date is saved each time you close the application">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="182.0" text="Data of all Users is saved each time you close the application">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="84.0" layoutY="202.0" prefHeight="41.0" prefWidth="297.0" text="SECTION II - GAME RULES">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="261.0" text="Users will be able to cancel early with FULL refund.&#10;They must  cancel before day of booking&#10;&#10;Users will be able to cancel late, only BEFORE they check-in&#10;Users who cancel late will only get a 70%  refund&#10;&#10;Users will automatically be checked out after end of booking&#10;Users who check out early do not recieve any refund&#10;Users who check in late recieve no compensation" textAlignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

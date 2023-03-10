@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PostBill">
+   <children>
+      <Label fx:id="header" layoutX="21.0" layoutY="67.0" prefHeight="121.0" prefWidth="550.0" text="Thank you customer for stayng with us! &#10;We hope you had a wonderful stay, and &#10;hope to see again.&#10;">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Label fx:id="content" layoutX="18.0" layoutY="206.0" text="Reward Points Accumulated:  ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="237.0" layoutY="341.0" onAction="#goHome" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: deepskyblue;" text="Return to Home" />
+   </children>
+</AnchorPane>

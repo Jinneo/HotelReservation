@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import java.util.ArrayList?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Extras">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" prefHeight="44.0" prefWidth="313.0" text="Extras">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="TV" layoutX="101.0" layoutY="76.0" mnemonicParsing="false" text="TV" />
+      <JFXCheckBox fx:id="RoomService" layoutX="225.0" layoutY="76.0" mnemonicParsing="false" text="Room Service" />
+      <JFXCheckBox fx:id="PoolAccess" layoutX="388.0" layoutY="76.0" mnemonicParsing="false" text="Pool Access" />
+      <Line endX="498.5" layoutX="101.0" layoutY="44.0" startX="-100.0" />
+      <Label layoutX="240.0" layoutY="45.0" text="Add-ons">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Line endX="498.5" layoutX="101.0" layoutY="108.0" startX="-100.0" />
+      <JFXRadioButton fx:id="RegularMealPlan" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" text="Regular Meal Plan">
+         <toggleGroup>
+            <ToggleGroup fx:id="mealPlan" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="PremiumMealPlan" layoutX="388.0" layoutY="140.0" mnemonicParsing="false" text="Premium Meal Plan" toggleGroup="$mealPlan" />
+      <Label layoutX="235.0" layoutY="109.0" text="Meal Plan">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="169.0" prefHeight="62.0" prefWidth="184.0" text="Oatmeal is only free food that is given throughout your stay. You must pay for everything else." wrapText="true" />
+      <Label layoutX="412.0" layoutY="164.0" prefHeight="73.0" prefWidth="159.0" text="You are given a five course meal for every meal for free." wrapText="true" />
+      <Line endX="498.5" layoutX="101.0" layoutY="234.0" startX="-100.0" />
+      <Label layoutX="232.0" layoutY="237.0" text="Membership">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="297.0" prefHeight="30.0" prefWidth="144.0" text="No benefits" wrapText="true" />
+      <Label layoutX="348.0" layoutY="297.0" prefHeight="55.0" prefWidth="184.0" text="Premium status, and priority before all others and discounts for future hotels." wrapText="true" />
+      <JFXButton layoutX="273.0" layoutY="493.0" mnemonicParsing="false" onAction="#benefits" style="-fx-background-color: deepskyblue;" text="Submit" />
+      <JFXRadioButton fx:id="NoMembership" layoutX="71.0" layoutY="270.0" mnemonicParsing="false" text="No Membership">
+         <toggleGroup>
+            <ToggleGroup fx:id="member" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="Membership" layoutX="394.0" layoutY="270.0" mnemonicParsing="false" text="Membership" toggleGroup="$member" />
+      <Line endX="498.5" layoutX="101.0" layoutY="352.0" startX="-100.0" />
+      <Label layoutX="205.0" layoutY="353.0" text="Discount/Rewards">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="451.0" text="Discount:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField layoutX="136.0" layoutY="452.0" />
+      <Label layoutX="48.0" layoutY="395.0" prefHeight="44.0" prefWidth="257.0" text="Enter any discount codes you may have from &#10;rewards system/admin or elsewhere" />
+      <Label layoutX="317.0" layoutY="451.0" text="PreviousID:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prevID" layoutX="422.0" layoutY="452.0" />
+      <Label layoutX="362.0" layoutY="390.0" prefHeight="55.0" prefWidth="238.0" text="Enter your previous ID if you have used&#10;our services before. You will qualify for &#10;more rewards points and discounts. " />
+   </children>
+   <fx:define>
+        <ArrayList fx:id="checkBox">
+            <fx:reference source="TV" />
+            <fx:reference source="RoomService" />
+            <fx:reference source="PoolAccess" />
+        </ArrayList>
+ 	</fx:define>
+ 	<fx:define>
+        <ArrayList fx:id="radioBtns">
+            <fx:reference source="RegularMealPlan" />
+            <fx:reference source="PremiumMealPlan" />
+            <fx:reference source="NoMembership" />
+            <fx:reference source="Membership" />
+        </ArrayList>
+ 	</fx:define>
+</AnchorPane>

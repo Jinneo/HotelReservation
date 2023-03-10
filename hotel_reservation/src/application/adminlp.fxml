@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Hotel">
+   <children>
+      <Label layoutX="221.0" layoutY="67.0" text="Admin Login">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="166.0" layoutY="191.0" text="Login:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userAdmin" layoutX="220.0" layoutY="189.0" />
+      <JFXButton layoutX="272.0" layoutY="309.0" onAction="#checkAdmin" style="-fx-background-color: deepskyblue;" text="Submit" />
+      <Label layoutX="134.0" layoutY="242.0" text="Password:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passAdmin" layoutX="220.0" layoutY="241.0" />
+      <Label fx:id="checkLabel" layoutX="268.0" layoutY="281.0" />
+   </children>
+</AnchorPane>
