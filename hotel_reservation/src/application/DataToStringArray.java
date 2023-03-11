@@ -37,6 +37,7 @@ public abstract class DataToStringArray implements Serializable{
 	static String prevIDText;
 	static boolean isValidDiscount;
 	static double discountAmnt;
+	static String adminSuccess;
 	
 	//link hash map sendline
 //	static List keys = new ArrayList(ExtraServicesPrices.keySet());
@@ -72,19 +73,14 @@ public abstract class DataToStringArray implements Serializable{
 	        	
 		  	    writer.writeNext(header);
 		  	    
-	        }
-	        if(RF(permafile)) {
-String[] header = {"UserID","Startdate", "Enddate", "InBetween", "RoomNo", "RoomPrices", "TV", "RS", "PA", "RMP", "PMP", "NM", "M", "TCOST", "CheckedIn", "Canceled"};
-	        	
-		  	    permawriter.writeNext(header);
-	        }
-	  	    
+	        }	    
 //	  	    System.out.println(read);
 	  	    writer.writeNext(Data.toArray(new String[Data.size()]));
 	  	    permawriter.writeNext(Data.toArray(new String[Data.size()]));
 //	  	    for(String i: Data) {
 //	  	    	writer.writeNext(new String[] {i});
 //	  	    }
+	  	    permawriter.close();
 	  	    writer.close();
 	  	    
 	    }

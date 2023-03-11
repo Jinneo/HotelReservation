@@ -111,7 +111,9 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	        	if(i[0].equals(userAdmin.getText())) {
 	        		if(i[1].equals(passAdmin.getText())) {
 	        			validated = true;
+	        			adminSuccess = userAdmin.getText();
 	        			Main.switchOut(event, adminpanel);
+	        			
 	        			break;
 	        		}
 	        		

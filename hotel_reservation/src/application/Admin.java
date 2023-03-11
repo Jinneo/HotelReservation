@@ -94,12 +94,18 @@ public class Admin extends DataToStringArray implements Pages, Initializable{
 			for(String[] nextLine: allUserData) {
 				
 			   if(nextLine[0].equals(userInput)) {
+				   CSVWriter adminwriter = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv",true));
+      				String[] adminLog = new String[]{adminSuccess, "kicked", nextLine[0]};
+					adminwriter.writeNext(adminLog);
+      				adminwriter.close();
+      				
 				   CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv"));
        				System.out.println(nextLine.length);
        				nextLine[0] = "CHECKED_OUT";
 					writer.writeAll(allUserData);
        				writer.flush();
        				writer.close();
+       				
        				
 			   } else if(!(nextLine[0].equals("CHECKED_OUT"))) {
 				   activeusers.add(nextLine[0] + " - " + nextLine[4]);
@@ -119,8 +125,16 @@ public class Admin extends DataToStringArray implements Pages, Initializable{
 		}
 	}
 	@FXML
-	public void logdata(ActionEvent event) {
+	public void logdata(ActionEvent event) throws IOException, CsvException {
+		CSVReader reader = new CSVReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv"));
 		
+		List<String[]> allUserData = reader.readAll();
+		for(String [] nextLine: allUserData) {
+			for(String i: nextLine) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
 	}
 	@FXML
 	public void addpoints(ActionEvent event) {
@@ -137,6 +151,11 @@ public class Admin extends DataToStringArray implements Pages, Initializable{
 			for(String [] nextLine: allUserData) {
 				//System.out.println(nextLine);
 			   if(nextLine[0].equals(addPTS)) {
+				   CSVWriter adminwriter = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv",true));
+     				String[] adminLog = new String[]{adminSuccess, "changed", nextLine[0], "points from", nextLine[1], "to", String.valueOf(Integer.parseInt(nextLine[1]) + pts)};
+					adminwriter.writeNext(adminLog);
+     				adminwriter.close();
+     				
 				   CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
        				System.out.println(nextLine.length);
        				nextLine[1] = String.valueOf(Integer.parseInt(nextLine[1]) + pts);
