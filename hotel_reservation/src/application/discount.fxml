@@ -24,6 +24,10 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="discount" layoutX="285.0" layoutY="101.0" text="Label" />
+      <Label fx:id="discount" layoutX="274.0" layoutY="102.0" text="Label">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

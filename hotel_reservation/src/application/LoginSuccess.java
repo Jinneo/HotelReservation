@@ -250,18 +250,20 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 	}
 	public void changePts(int amount) {
 		try {
-			CSVReader reader = new CSVReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/discount.csv"));
+			CSVReader reader = new CSVReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
 			
 			List<String[]> allUserData = reader.readAll();
 			for(String [] nextLine: allUserData) {
 				//System.out.println(nextLine);
 			   if(nextLine[0].equals(loginSuccess)) {
-				   CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/discount.csv"));
+				   CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
        				System.out.println(nextLine.length);
        				if((Integer.parseInt(nextLine[1]) -amount)<0) {
        					ifEnoughPts = false;
        				} else {
-       				nextLine[1] = String.valueOf(Integer.parseInt(nextLine[1]) -amount);
+       					ifEnoughPts = true;
+       				System.out.println(Integer.parseInt(nextLine[1])-amount);
+       				nextLine[1] = String.valueOf(Integer.parseInt(nextLine[1])-amount);
        				}
 					writer.writeAll(allUserData);
        				writer.flush();
@@ -286,37 +288,38 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 		changePts(1000);
 		if(ifEnoughPts) {
 		pf10 pf10obj = new pf10();
+		discountString = pf10obj.discount();
 		discountData.add(pf10obj.discount());
 		discountData.add(pf10obj.getClass().toString());
 		Discount(discountData);
 		Main.switchOut(event, discountload);
-		} 
+		} else {ifEnoughPts = true;}
 	}
 	@FXML
 	public void discount15pf(ActionEvent event) {
 		changePts(1700);
 		if(ifEnoughPts) {
 		pf15 pf15obj = new pf15();
-		pf15obj.discount();
+		discountString = pf15obj.discount();
 		discountData.add(pf15obj.discount());
 		discountData.add(pf15obj.getClass().toString());
 		Discount(discountData);
 		Main.switchOut(event, discountload);
-		}
+		}else {ifEnoughPts = true;}
 	}
 	@FXML
 	public void discount20pf(ActionEvent event) {
 		changePts(2600);
 		if(ifEnoughPts) {
 		pf20 pf20obj = new pf20();
-		pf20obj.discount();
+		discountString = pf20obj.discount();
 		
 		discountData.add(pf20obj.discount());
 		discountData.add(pf20obj.getClass().toString());
 		Discount(discountData);
 
 		Main.switchOut(event, discountload);
-		}
+		} else {ifEnoughPts = true;}
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
