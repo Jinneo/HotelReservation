@@ -117,5 +117,30 @@ String[] header = {"UserID","Startdate", "Enddate", "InBetween", "RoomNo", "Room
 	    }
 	    Data.clear();
 	}
+	public void Discount(ArrayList<String> Data) {
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/discount.csv");
+	    try {
+	        FileWriter outputfile = new FileWriter(file, true);
+	        CSVWriter writer = new CSVWriter(outputfile);
+	        if(RF(file)) {
+	        	String[] header = {"DiscountID", "DiscountClass"};
+	        	
+		  	    writer.writeNext(header);
+	        }
+	  	    
+//	  	    System.out.println(read);
+	  	    writer.writeNext(Data.toArray(new String[Data.size()]));
+//	  	    for(String i: Data) {
+//	  	    	writer.writeNext(new String[] {i});
+//	  	    }
+	  	    writer.close();
+	  	    
+	    }
+	    catch (IOException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+	    }
+	    Data.clear();
+	}
 	
 }

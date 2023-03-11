@@ -35,6 +35,10 @@ public class Admin implements Pages, Initializable{
 	TextField amount;
 //	}
 	@FXML
+	public void goBackHome(ActionEvent event) {
+		Main.switchOut(event, startpage);
+	}
+	@FXML
 	public void gendiscount(ActionEvent event) {
 		
 	}

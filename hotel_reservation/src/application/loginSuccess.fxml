@@ -32,9 +32,9 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <JFXButton layoutX="21.0" layoutY="341.0" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: deepskyblue;" text="10% Discount(1000 RP)" />
-      <JFXButton layoutX="224.0" layoutY="341.0" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: deepskyblue;" text="15% Discount(1700 RP)" />
-      <JFXButton layoutX="423.0" layoutY="341.0" prefHeight="37.0" prefWidth="155.0" style="-fx-background-color: deepskyblue;" text="20% Discount(2600 RP)" />
+      <JFXButton layoutX="21.0" layoutY="341.0" onAction="#discount10pf" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: deepskyblue;" text="10% Discount(1000 RP)" />
+      <JFXButton layoutX="224.0" layoutY="341.0" onAction="#discount15pf" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: deepskyblue;" text="15% Discount(1700 RP)" />
+      <JFXButton layoutX="423.0" layoutY="341.0" onAction="#discount20pf" prefHeight="37.0" prefWidth="155.0" style="-fx-background-color: deepskyblue;" text="20% Discount(2600 RP)" />
       <TabPane fx:id="ReservationOpts" layoutX="140.0" layoutY="64.0" prefHeight="210.0" prefWidth="317.0" style="-fx-border-color: black;" tabClosingPolicy="UNAVAILABLE" />
       <GridPane fx:id="newGP" layoutX="10.0" layoutY="89.0" prefHeight="0.0" prefWidth="171.0">
         <columnConstraints>

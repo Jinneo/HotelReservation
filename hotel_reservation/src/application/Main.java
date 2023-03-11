@@ -121,10 +121,9 @@ public class Main extends Application implements Pages{
 			newLoad = new FXMLLoader(Hotel.class.getResource("adminLog.fxml"));
 		}else if(valueOf.equals(String.valueOf(userpanel))) {
 			newLoad = new FXMLLoader(Hotel.class.getResource("kickuser.fxml"));
-		}
-//		}else if(valueOf.equals(String.valueOf(discountarea))) {
-//			newLoad = new FXMLLoader(Hotel.class.getResource("adminLog.fxml"));
-//		}
+		} else if(valueOf.equals(String.valueOf(discountload))) {
+			newLoad = new FXMLLoader(Hotel.class.getResource("discount.fxml"));
+		} 
     	return newLoad;
     }
     //later - work on implementing a cleaner switchScreen method

@@ -18,6 +18,7 @@ public interface Pages {
     public static final FXMLLoader adminlogin = new FXMLLoader();
     public static final FXMLLoader adminpanel = new FXMLLoader();
     public static final FXMLLoader userpanel = new FXMLLoader();
+    public static final FXMLLoader discountload = new FXMLLoader();
 
     
     
