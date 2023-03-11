@@ -18,14 +18,18 @@ import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.exceptions.CsvValidationException;
 
+import application.LoginSuccess.pf10;
+import application.LoginSuccess.pf15;
+import application.LoginSuccess.pf20;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class Admin implements Pages, Initializable{
+public class Admin extends DataToStringArray implements Pages, Initializable{
 
 	@FXML
 	JFXComboBox<String> activeUsers;
@@ -33,14 +37,47 @@ public class Admin implements Pages, Initializable{
 	JFXComboBox<String> permaUsers;
 	@FXML
 	TextField amount;
+	static String discountString;
+	@FXML
+	Label discount;
 //	}
+	ArrayList<String> discountData = new ArrayList<String>();
 	@FXML
 	public void goBackHome(ActionEvent event) {
 		Main.switchOut(event, startpage);
 	}
 	@FXML
-	public void gendiscount(ActionEvent event) {
+	public void gen10pf(ActionEvent event) {
+		pf10 pf10obj = new pf10();
+		discountString = pf10obj.discount();
+		discountData.add(pf10obj.discount());
+		discountData.add(pf10obj.getClass().getName());
+		Discount(discountData);
+		Main.switchOut(event, admindiscount);
+	}
+	@FXML
+	public void gen15pf(ActionEvent event) {
+		pf15 pf15obj = new pf15();
+		discountString = pf15obj.discount();
+		discountData.add(pf15obj.discount());
+		discountData.add(pf15obj.getClass().getName());
+		Discount(discountData);
+		Main.switchOut(event, admindiscount);
+	}
+	@FXML
+	public void gen20pf(ActionEvent event) {
+		pf20 pf20obj = new pf20();
+		discountString = pf20obj.discount();
 		
+		discountData.add(pf20obj.discount());
+		discountData.add(pf20obj.getClass().getName());
+		Discount(discountData);
+
+		Main.switchOut(event, admindiscount);
+	}
+	@FXML
+	public void goBackToLogin(ActionEvent event) {
+		Main.switchOut(event, adminpanel);
 	}
 	@FXML
 	public void userPanel(ActionEvent event) {
@@ -48,6 +85,7 @@ public class Admin implements Pages, Initializable{
 	}
 	@FXML
 	public void kickUser(ActionEvent event) {
+		
 		String userInput = (activeUsers.getValue()).substring(0,(activeUsers.getValue()).indexOf(" "));
 		try {
 			CSVReader reader = new CSVReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv"));
@@ -166,6 +204,8 @@ public class Admin implements Pages, Initializable{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 }
+} else if((arg0.sameFile(new URL("file:/Users/pvadlamani/git/repository/hotel_reservation/bin/application/admindiscount.fxml")))) {
+	discount.setText(discountString);
 }
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block

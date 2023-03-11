@@ -12,7 +12,9 @@
             <Font size="55.0" />
          </font>
       </Label>
-      <JFXButton layoutX="232.0" layoutY="185.0" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: deepskyblue;" text="Generate Discount" />
+      <JFXButton layoutX="220.0" layoutY="187.0" onAction="#gen10pf" prefHeight="26.0" prefWidth="148.0" style="-fx-background-color: deepskyblue;" text="Generate 10% Discount" />
       <JFXButton layoutX="235.0" layoutY="132.0" onAction="#userPanel" style="-fx-background-color: deepskyblue;" text="Access User Panel" />
+      <JFXButton layoutX="220.0" layoutY="237.0" onAction="#gen15pf" prefHeight="26.0" prefWidth="148.0" style="-fx-background-color: deepskyblue;" text="Generate 15% Discount" />
+      <JFXButton layoutX="220.0" layoutY="287.0" onAction="#gen20pf" prefHeight="26.0" prefWidth="148.0" style="-fx-background-color: deepskyblue;" text="Generate 20% Discount" />
    </children>
 </AnchorPane>

@@ -123,6 +123,8 @@ public class Main extends Application implements Pages{
 			newLoad = new FXMLLoader(Hotel.class.getResource("kickuser.fxml"));
 		} else if(valueOf.equals(String.valueOf(discountload))) {
 			newLoad = new FXMLLoader(Hotel.class.getResource("discount.fxml"));
+		} else if(valueOf.equals(String.valueOf(admindiscount))) {
+			newLoad = new FXMLLoader(Hotel.class.getResource("admindiscount.fxml"));
 		} 
     	return newLoad;
     }

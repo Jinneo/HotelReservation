@@ -2,6 +2,7 @@ package application;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -11,6 +12,7 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 
 import application.LoginSuccess.pf10;
@@ -80,6 +82,11 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
         		}
         		System.out.println(discountAmnt);
         		isValidDiscount = true;
+        		CSVWriter writer = new CSVWriter(new FileWriter(permfile));
+        		i[0] = "USED";
+    			writer.writeAll(discountData);
+    			writer.flush();
+    			writer.close();
         		break;
         	}
         }
