@@ -47,7 +47,7 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 //	ArrayList<>
 	public void getData() {
 		System.out.println(Data);
-		int total = 0;
+		double total = 0;
 		int roomCalculation, RateOfRoom = 0, DaysInBetween = 0, yComp = 0;
 		String RoomName = null;
 		Iterator<String> itr = Data.iterator();
@@ -73,7 +73,13 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 				  System.out.println(key);
 			  }
 		}
-		totalLabels.add(new Label("Total cost: " + total));
+		if(isValidDiscount) {
+			totalLabels.add(new Label("Original cost: " + (total)));
+			totalLabels.add(new Label("Discount : " + (discountAmnt*100) + "%"));
+			total = total-total*discountAmnt;
+			totalLabels.add(new Label("Discounted cost: " + (total)));
+			isValidDiscount = false;
+		} else {totalLabels.add(new Label("Total cost: " + (total)));};
 		System.out.println(total);
 		for(Label i: totalLabels) {
 			//need to remove stackpane its literally useless here
@@ -99,6 +105,7 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 	//using Java's random generator for secure numbers
 	public void generateUserID(ActionEvent event) throws NoSuchAlgorithmException {
 		if(isValidID) {
+			isValidID = false;
 			Data.add(0, prevIDText);
 			super.DTS(Data);
 			Main.switchOut(event, startpage);

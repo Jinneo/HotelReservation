@@ -35,6 +35,8 @@ public abstract class DataToStringArray implements Serializable{
 	static String sendPMS;
 	static boolean isValidID;
 	static String prevIDText;
+	static boolean isValidDiscount;
+	static double discountAmnt;
 	
 	//link hash map sendline
 //	static List keys = new ArrayList(ExtraServicesPrices.keySet());

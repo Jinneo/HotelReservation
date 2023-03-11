@@ -67,7 +67,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="136.0" layoutY="452.0" />
+      <TextField fx:id = "discountID" layoutX="136.0" layoutY="452.0" />
       <Label layoutX="48.0" layoutY="395.0" prefHeight="44.0" prefWidth="257.0" text="Enter any discount codes you may have from &#10;rewards system/admin or elsewhere" />
       <Label layoutX="317.0" layoutY="451.0" text="PreviousID:">
          <font>

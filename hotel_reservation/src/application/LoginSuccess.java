@@ -248,6 +248,10 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 	public void goBackHome(ActionEvent event) throws IOException {
 		Main.switchOut(event, startpage);
 	}
+	@FXML
+	public void goBackToLogin(ActionEvent event) throws IOException {
+		Main.switchOut(event, loginsuccess);
+	}
 	public void changePts(int amount) {
 		try {
 			CSVReader reader = new CSVReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
@@ -264,6 +268,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
        					ifEnoughPts = true;
        				System.out.println(Integer.parseInt(nextLine[1])-amount);
        				nextLine[1] = String.valueOf(Integer.parseInt(nextLine[1])-amount);
+       				sendPMS = nextLine[1];
        				}
 					writer.writeAll(allUserData);
        				writer.flush();
@@ -290,7 +295,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 		pf10 pf10obj = new pf10();
 		discountString = pf10obj.discount();
 		discountData.add(pf10obj.discount());
-		discountData.add(pf10obj.getClass().toString());
+		discountData.add(pf10obj.getClass().getName());
 		Discount(discountData);
 		Main.switchOut(event, discountload);
 		} else {ifEnoughPts = true;}
@@ -302,7 +307,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 		pf15 pf15obj = new pf15();
 		discountString = pf15obj.discount();
 		discountData.add(pf15obj.discount());
-		discountData.add(pf15obj.getClass().toString());
+		discountData.add(pf15obj.getClass().getName());
 		Discount(discountData);
 		Main.switchOut(event, discountload);
 		}else {ifEnoughPts = true;}
@@ -315,7 +320,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 		discountString = pf20obj.discount();
 		
 		discountData.add(pf20obj.discount());
-		discountData.add(pf20obj.getClass().toString());
+		discountData.add(pf20obj.getClass().getName());
 		Discount(discountData);
 
 		Main.switchOut(event, discountload);
@@ -325,6 +330,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		try {
+			System.out.println("got");
 			if(arg0.sameFile(new URL("file:/Users/pvadlamani/git/repository/hotel_reservation/bin/application/loginSuccess.fxml")))
 				userinterface();
 			else 
@@ -334,7 +340,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 			e.printStackTrace();
 		}
 	}
-	public class pf10{
+	public static class pf10{
 		public String discount() {
 			SecureRandom random = new SecureRandom();
 			byte bytes[] = new byte[4];
@@ -344,7 +350,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 			return UID;
 		}
 	}
-	public class pf15{
+	public static class pf15{
 		public String discount() {
 			SecureRandom random = new SecureRandom();
 			byte bytes[] = new byte[4];
@@ -354,7 +360,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 			return UID;
 		}
 	}
-	public class pf20{
+	public static class pf20{
 		public String discount() {
 			SecureRandom random = new SecureRandom();
 			byte bytes[] = new byte[4];

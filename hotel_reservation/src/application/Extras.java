@@ -13,6 +13,9 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvException;
 
+import application.LoginSuccess.pf10;
+import application.LoginSuccess.pf15;
+import application.LoginSuccess.pf20;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +34,8 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
 	public List<JFXRadioButton> radioBtns;
 	@FXML
 	public TextField prevID;
+	@FXML
+	public TextField discountID;
 	
 	public void Extras_Send() {
 		for(int i = 0; i<checkBox.size(); i++) {
@@ -48,13 +53,42 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
         	if(prevID.getText().equals(i[0])) {
         		prevIDText = prevID.getText();
         		isValidID = true;
+        		break;
+        	}
+        }
+	}
+	public void checkDiscount() throws IOException, CsvException, ClassNotFoundException {
+		pf10 obj10 = new pf10();
+		pf15 obj15 = new pf15();
+		File permfile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/discount.csv");
+		CSVReader discount = new CSVReader(new FileReader(permfile));
+        List<String[]> discountData = discount.readAll(); 
+        for(String[] i: discountData) {
+        	if(discountID.getText().equals(i[0])) {
+        		//System.out.println("HELLO");
+        		System.out.println(Class.forName(i[1]).equals(obj10.getClass()));
+        		System.out.println(Class.forName(i[1]));
+        		System.out.println(obj10.getClass());
+        		//System.out.println(i[0]);
+        		
+        		if(Class.forName(i[1]).equals(obj10.getClass())) {
+        			discountAmnt = 0.10;
+        		} else if(Class.forName(i[1]).equals(obj15.getClass())) {
+        			discountAmnt = 0.15;
+        		} else {
+        			discountAmnt = 0.2;
+        		}
+        		System.out.println(discountAmnt);
+        		isValidDiscount = true;
+        		break;
         	}
         }
 	}
 	@FXML
-	public void benefits(ActionEvent event) throws IOException, CsvException {
+	public void benefits(ActionEvent event) throws IOException, CsvException, ClassNotFoundException {
 		Extras_Send();	
 		checkID();
+		checkDiscount();
 		Main.switchOut(event, totalbill);	    
 	}
 	

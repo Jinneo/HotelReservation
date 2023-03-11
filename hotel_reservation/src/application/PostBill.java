@@ -24,7 +24,7 @@ public class PostBill extends DataToStringArray implements Pages, Initializable{
 	Label header;
 	@FXML
 	Label content;
-	int rwdpts;
+	double rwdpts;
 	static int prefIndex;
 	@FXML
 	public void goHome(ActionEvent event) {
@@ -35,9 +35,10 @@ public class PostBill extends DataToStringArray implements Pages, Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		FileReader readfile;
 		try {
-			readfile = new FileReader("/Users/pvadlamani/eclipse/finalPROJECT/hotel_reservation/src/application/permaRecord.csv");
+			readfile = new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 			CSVReader read = new CSVReaderBuilder(readfile).build();
 	        List<String[]> allUserData = read.readAll(); 
+	        
 	        for(String[] i: allUserData) {
 				for(String[] sendLine: sentLine) {
 					
@@ -49,13 +50,15 @@ public class PostBill extends DataToStringArray implements Pages, Initializable{
 						break;
 					} else if(sendLine[sendLine.length-1].equals("LATE")) {
 						header.setText("Cancelled Succesfully");
-						content.setText("Original Amount: " + sendLine[sendLine.length-3] + "\nRefund Amount(70%): " + Integer.parseInt(sendLine[sendLine.length-3])*0.7);
+						content.setText("Original Amount: " + sendLine[sendLine.length-3] + "\nRefund Amount(70%): " + Double.parseDouble(sendLine[sendLine.length-3])*0.7);
 						break;
 					} else {
-						rwdpts = Integer.parseInt(sendLine[sendLine.length-3]);
+						System.out.println("REACHED");
+						rwdpts = Double.parseDouble(sendLine[sendLine.length-3]);
 						System.out.println(rwdpts);
-						CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/eclipse/finalPROJECT/hotel_reservation/src/application/permaRecord.csv"));
-	        			i[1] = String.valueOf(Integer.parseInt(i[1])+rwdpts);
+						CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
+						System.out.println("REACHED");
+	        			i[1] = String.valueOf(Double.parseDouble(i[1])+rwdpts);
 	        			writer.writeAll(allUserData);
 	        			writer.flush();
 	        			writer.close();

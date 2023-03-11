@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginSuccess">
    <children>
-      <Button layoutX="531.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackHome" prefHeight="31.0" prefWidth="35.0" style="-fx-background-color: deepskyblue;">
+      <Button layoutX="531.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToLogin" prefHeight="31.0" prefWidth="35.0" style="-fx-background-color: deepskyblue;">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
