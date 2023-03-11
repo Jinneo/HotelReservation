@@ -41,7 +41,7 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
 		}
 	}
 	public void checkID() throws IOException, CsvException {
-		File permfile = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/permaRecord.csv");
+		File permfile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 		CSVReader permread = new CSVReaderBuilder(new FileReader(permfile)).build();
         List<String[]> permUserData = permread.readAll(); 
         for(String[] i: permUserData) {

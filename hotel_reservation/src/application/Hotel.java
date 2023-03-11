@@ -53,7 +53,7 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	}
 	@FXML
 	public void changeDate(ActionEvent event) throws IOException, CsvException{
-		File file = new File("/Users/pvadlamani/eclipse/hotel_reservation/src/application/userData.csv");
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv");
 		date = date.plusDays(1L);
 		currDate.setText(date.toString());
 		FileReader readfile = new FileReader(file);
@@ -81,12 +81,12 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
-			if(arg0.sameFile(new URL("file:/Users/pvadlamani/Downloads/Wproject/hotel_reservation/bin/application/startpage.fxml"))){
+			if(arg0.sameFile(new URL("file:/Users/pvadlamani/git/repository/hotel_reservation/bin/application/startpage.fxml"))){
 			currDate.setText(date.toString());
 			}  
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 		
 	}
@@ -100,7 +100,7 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	}
 	@FXML
 	public void checkAdmin(ActionEvent event) {
-		File file = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/adminData.csv");
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminData.csv");
 	    try {
 	    	boolean validated = false;
 	        FileReader outputfile = new FileReader(file);

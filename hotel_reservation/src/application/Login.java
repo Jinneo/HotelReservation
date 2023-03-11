@@ -31,8 +31,8 @@ public class Login extends DataToStringArray implements Pages{
 	boolean login_Worked;
 	public void checkLogin(ActionEvent event) throws IOException {
 		
-		File file = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/userData.csv");
-		File permfile = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/permaRecord.csv");
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv");
+		File permfile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 
 		try {
 			FileReader readfile = new FileReader(file);

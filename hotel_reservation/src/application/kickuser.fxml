@@ -7,22 +7,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Admin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Admin">
    <children>
-      <Label layoutX="159.0" layoutY="44.0" text="User Panel - Admin">
+      <Label layoutX="259.0" layoutY="46.0" text="User Panel - Admin">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
       <JFXComboBox fx:id="activeUsers" layoutX="108.0" layoutY="137.0" promptText="ACTIVE_USERS" />
       <Label layoutX="14.0" layoutY="142.0" text="Kick Out a User:" />
-      <JFXButton layoutX="73.0" layoutY="187.0" style="-fx-background-color: deepskyblue;" text="Submit" />
-      <JFXComboBox layoutX="472.0" layoutY="137.0" promptText="ALL_USERS" />
-      <Label layoutX="301.0" layoutY="142.0" text="Add Reward Points to a User" />
-      <JFXButton layoutX="521.0" layoutY="213.0" style="-fx-background-color: deepskyblue;" text="Submit" />
-      <TextField layoutX="467.0" layoutY="174.0" prefHeight="26.0" prefWidth="108.0" />
-      <Label layoutX="312.0" layoutY="179.0" text="Amount of Points to Add" />
-      <JFXButton layoutX="217.0" layoutY="327.0" style="-fx-background-color: deepskyblue;" text="Click to Access All User Log" />
+      <JFXButton layoutX="452.0" layoutY="137.0" onAction="#kickUser" style="-fx-background-color: deepskyblue;" text="Submit" />
+      <JFXComboBox fx:id="permaUsers" layoutX="169.0" layoutY="252.0" promptText="ALL_USERS" />
+      <Label layoutX="10.0" layoutY="248.0" text="Add/Remove &#10;Reward Points to a User" />
+      <JFXButton layoutX="670.0" layoutY="262.0" onAction="#addpoints" style="-fx-background-color: deepskyblue;" text="Submit" />
+      <TextField fx:id="amount" layoutX="552.0" layoutY="262.0" prefHeight="26.0" prefWidth="108.0" />
+      <Label layoutX="475.0" layoutY="267.0" text="# of points: " />
+      <JFXButton layoutX="319.0" layoutY="336.0" onAction="#logdata" style="-fx-background-color: deepskyblue;" text="Click to Access All User Log" />
    </children>
 </AnchorPane>

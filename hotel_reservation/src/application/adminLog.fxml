@@ -13,6 +13,6 @@
          </font>
       </Label>
       <JFXButton layoutX="232.0" layoutY="185.0" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: deepskyblue;" text="Generate Discount" />
-      <JFXButton layoutX="235.0" layoutY="132.0" onAction="#kickUser" style="-fx-background-color: deepskyblue;" text="Access User Panel" />
+      <JFXButton layoutX="235.0" layoutY="132.0" onAction="#userPanel" style="-fx-background-color: deepskyblue;" text="Access User Panel" />
    </children>
 </AnchorPane>

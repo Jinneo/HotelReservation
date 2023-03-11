@@ -92,7 +92,7 @@ public class roomSelection extends DataToStringArray implements Initializable, P
 	@Override 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//try and figure out a more efficent solution, if not this soln is ok
-		File file = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/userData.csv");
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv");
 		try {
 		FileReader readfile = new FileReader(file);
 		CSVReader read = new CSVReaderBuilder(readfile).build();

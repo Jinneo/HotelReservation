@@ -24,7 +24,7 @@ public class Main extends Application implements Pages{
     	Runtime.getRuntime().addShutdownHook(new Thread(()->{
     		//retrive data
     		try {
-    		BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/date.txt"));
+    		BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/date.txt"));
     	    writer.write(String.valueOf(DataToStringArray.date));
     	    
     	    writer.close();
@@ -37,7 +37,7 @@ public class Main extends Application implements Pages{
         //launch()
     }
     public static void retriveData() throws IOException {
-    	BufferedReader br = new BufferedReader(new FileReader("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/date.txt"));
+    	BufferedReader br = new BufferedReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/date.txt"));
     	String dateValue;
     	while ((dateValue = br.readLine()) != null) {
     		 

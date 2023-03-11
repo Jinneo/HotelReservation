@@ -58,18 +58,28 @@ public abstract class DataToStringArray implements Serializable{
 		return isHeader;
 	}
 	public void DTS(ArrayList<String> Data) {
-		File file = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/userData.csv");
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv");
+		File permafile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv");
+
 	    try {
 	        FileWriter outputfile = new FileWriter(file, true);
 	        CSVWriter writer = new CSVWriter(outputfile);
+	        CSVWriter permawriter = new CSVWriter(new FileWriter(permafile, true));
 	        if(RF(file)) {
 	        	String[] header = {"UserID","Startdate", "Enddate", "InBetween", "RoomNo", "RoomPrices", "TV", "RS", "PA", "RMP", "PMP", "NM", "M", "TCOST", "CheckedIn", "Canceled"};
 	        	
 		  	    writer.writeNext(header);
+		  	    
+	        }
+	        if(RF(permafile)) {
+String[] header = {"UserID","Startdate", "Enddate", "InBetween", "RoomNo", "RoomPrices", "TV", "RS", "PA", "RMP", "PMP", "NM", "M", "TCOST", "CheckedIn", "Canceled"};
+	        	
+		  	    permawriter.writeNext(header);
 	        }
 	  	    
 //	  	    System.out.println(read);
 	  	    writer.writeNext(Data.toArray(new String[Data.size()]));
+	  	    permawriter.writeNext(Data.toArray(new String[Data.size()]));
 //	  	    for(String i: Data) {
 //	  	    	writer.writeNext(new String[] {i});
 //	  	    }
@@ -83,7 +93,7 @@ public abstract class DataToStringArray implements Serializable{
 	    Data.clear();
 	}
 	public void PMS(ArrayList<String> Data) {
-		File file = new File("/Users/pvadlamani/Downloads/Wproject/hotel_reservation/src/application/permaRecord.csv");
+		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 	    try {
 	        FileWriter outputfile = new FileWriter(file, true);
 	        CSVWriter writer = new CSVWriter(outputfile);
