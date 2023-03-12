@@ -1,26 +1,36 @@
 package application;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import com.jfoenix.controls.JFXComboBox;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.exceptions.CsvValidationException;
+import org.slf4j.*;
 
 import application.LoginSuccess.pf10;
 import application.LoginSuccess.pf15;
 import application.LoginSuccess.pf20;
+import javafx.application.HostServices;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -75,6 +85,7 @@ public class Admin extends DataToStringArray implements Pages, Initializable{
 
 		Main.switchOut(event, admindiscount);
 	}
+	
 	@FXML
 	public void goBackToLogin(ActionEvent event) {
 		Main.switchOut(event, adminpanel);
@@ -125,16 +136,30 @@ public class Admin extends DataToStringArray implements Pages, Initializable{
 		}
 	}
 	@FXML
-	public void logdata(ActionEvent event) throws IOException, CsvException {
-		CSVReader reader = new CSVReader(new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv"));
-		
+	public void logdata(ActionEvent event) throws IOException, CsvException, URISyntaxException {
+		File pdfFile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/log.pdf");
+		PdfWriter pdf = new PdfWriter(pdfFile);
+		PdfDocument pdfD = new PdfDocument(pdf);
+		pdfD.addNewPage();
+		Document document = new Document(pdfD);
+		Paragraph header = new Paragraph("ADMIN AND USER LOG");
+		document.add(header);
+		CSVReader reader = new CSVReader(new FileReader(new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv")));
 		List<String[]> allUserData = reader.readAll();
 		for(String [] nextLine: allUserData) {
+			Paragraph newLine = new Paragraph();
 			for(String i: nextLine) {
-				System.out.print(i + " ");
+				newLine.add(i+ " ");
 			}
-			System.out.println();
+			//System.out.println(newLine);
+			document.add(newLine);
 		}
+		
+		document.close();
+		if(Desktop.isDesktopSupported()) {
+			Desktop.getDesktop().browse(new URI("file:///Users/pvadlamani/git/repository/hotel_reservation/src/application/log.pdf"));
+		}
+		
 	}
 	@FXML
 	public void addpoints(ActionEvent event) {

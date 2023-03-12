@@ -51,5 +51,75 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/barcodes-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/commons-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/font-asian-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/forms-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/hyph-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/io-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/kernel-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/layout-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/pdfa-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/pdftest-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/sign-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/styled-xml-parser-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/iText7-Core-7.2.5-only-jars/svg-7.2.5.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/pvadlamani/Downloads/slf4j-api-2.0.6.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
