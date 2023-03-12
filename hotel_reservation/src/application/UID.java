@@ -32,9 +32,9 @@ public class UID extends DataToStringArray implements Initializable, Pages{
 	}
 	@FXML
 	public void returnHome(ActionEvent event) throws IOException {
-		
+
 		Main.switchOut(event, startpage);
-	    super.DTS(Data);
+		super.DTS(Data);
 	}
-	
+
 }

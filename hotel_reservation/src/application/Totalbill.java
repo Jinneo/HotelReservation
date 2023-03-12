@@ -44,34 +44,34 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 	@FXML
 	public GridPane totalPane;
 	ArrayList<Label> totalLabels = new ArrayList<Label>();
-//	ArrayList<>
+	//	ArrayList<>
 	public void getData() {
-		System.out.println(Data);
+
 		double total = 0;
 		int roomCalculation, RateOfRoom = 0, DaysInBetween = 0, yComp = 0;
 		String RoomName = null;
 		Iterator<String> itr = Data.iterator();
 		while(itr.hasNext()) {
-			 String key = itr.next();
-			  if(key.contains("true")) {
-				  System.out.println(ExtraServicesPrices.get(key.substring(key.indexOf('e')+1)));
-				  total += ExtraServicesPrices.get(key.substring(key.indexOf('e')+1));
-				  totalLabels.add(new Label( String.valueOf(key.substring(key.indexOf('e')+1)) + " price: " + String.valueOf(ExtraServicesPrices.get(key.substring(key.indexOf('e')+1)))));
-			  } else if(StringUtils.isNumeric(key)) {
-					DaysInBetween = Integer.parseInt(key);
-			  } else if(key.contains("Room")){
-				    RoomName = key;
-			  } else if (key.contains("$")){
-				  	//String manipulation
-				  	RateOfRoom = Integer.parseInt(key.substring(key.indexOf(':')+2, key.indexOf('$')));
-					roomCalculation = RateOfRoom*DaysInBetween;
-					total += roomCalculation;
-					totalLabels.add(new Label(RoomName + "- price : " + String.valueOf(RateOfRoom)));
-					totalLabels.add(new Label("Days staying " + String.valueOf(DaysInBetween)));
-					totalLabels.add(new Label("room cost " + String.valueOf(roomCalculation)));
-			  } else {
-				  System.out.println(key);
-			  }
+			String key = itr.next();
+			if(key.contains("true")) {
+
+				total += ExtraServicesPrices.get(key.substring(key.indexOf('e')+1));
+				totalLabels.add(new Label( String.valueOf(key.substring(key.indexOf('e')+1)) + " price: " + String.valueOf(ExtraServicesPrices.get(key.substring(key.indexOf('e')+1)))));
+			} else if(StringUtils.isNumeric(key)) {
+				DaysInBetween = Integer.parseInt(key);
+			} else if(key.contains("Room")){
+				RoomName = key;
+			} else if (key.contains("$")){
+				//String manipulation
+				RateOfRoom = Integer.parseInt(key.substring(key.indexOf(':')+2, key.indexOf('$')));
+				roomCalculation = RateOfRoom*DaysInBetween;
+				total += roomCalculation;
+				totalLabels.add(new Label(RoomName + "- price : " + String.valueOf(RateOfRoom)));
+				totalLabels.add(new Label("Days staying " + String.valueOf(DaysInBetween)));
+				totalLabels.add(new Label("room cost " + String.valueOf(roomCalculation)));
+			} else {
+
+			}
 		}
 		if(isValidDiscount) {
 			totalLabels.add(new Label("Original cost: " + (total)));
@@ -80,10 +80,10 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 			totalLabels.add(new Label("Discounted cost: " + (total)));
 			isValidDiscount = false;
 		} else {totalLabels.add(new Label("Total cost: " + (total)));};
-		System.out.println(total);
+
 		for(Label i: totalLabels) {
 			//need to remove stackpane its literally useless here
-//			StackPane.setAlignment(i, Pos.CENTER);
+			//			StackPane.setAlignment(i, Pos.CENTER);
 			totalLabels.get(totalLabels.indexOf(i)).setLayoutY(yComp+=25);
 			totalLabels.get(totalLabels.indexOf(i)).setFont(new Font("System", 20));
 			GridPane.setHalignment(i, HPos.CENTER);
@@ -122,7 +122,7 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 			permvals.add(UID);
 			permvals.add("0");
 			PMS(permvals);
-			System.out.println(UID);
+
 			Main.switchOut(event, ID);
 
 		}
@@ -132,5 +132,5 @@ public class Totalbill extends DataToStringArray implements Initializable, Pages
 		// TODO Auto-generated method stub
 		getData();
 	}
-	
+
 }

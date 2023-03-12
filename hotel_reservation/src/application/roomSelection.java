@@ -52,25 +52,25 @@ public class roomSelection extends DataToStringArray implements Initializable, P
 	@FXML public GridPane gridPane;
 	@FXML
 	public void move(ActionEvent event) throws IOException {
-		System.out.println(event);
+
 		String roomName ;
 		int x = 0;
 		String roomPrice;
-		System.out.println("reach");
-		System.out.println(event.getSource());
+
+
 		ObservableList<Node> toCheck = ((Node)event.getSource()).getParent().getChildrenUnmodifiable();
 		for(Node i: toCheck) {
-			System.out.println(i.getClass());
+
 			if(i.getClass()== new Label().getClass()) {
 				Data.add(((Label)i).getText());
 			}
 		}
-		System.out.println(x);
-//		Data.add(roomNames.get(CHK).getText());
-//		Data.add(roomPrices.get(CHK).getText());
+
+		//		Data.add(roomNames.get(CHK).getText());
+		//		Data.add(roomPrices.get(CHK).getText());
 		populate();
 		Main.switchOut(event, extras);
-		
+
 	}
 	public void populate() {
 		ExtraServicesPrices.put("TV", (Integer)25);
@@ -94,51 +94,51 @@ public class roomSelection extends DataToStringArray implements Initializable, P
 		//try and figure out a more efficent solution, if not this soln is ok
 		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv");
 		try {
-		FileReader readfile = new FileReader(file);
-		CSVReader read = new CSVReaderBuilder(readfile).build();
-        List<String[]> allUserData = read.readAll(); 
-        for(int j = 1; j<allUserData.size(); j++) {
-        String nextLine[] = allUserData.get(j);
-        if(!(nextLine[0].equals("CHECKED_OUT"))) {
-        	System.out.println(nextLine[4]);
-        	System.out.println(String.valueOf(new Button(nextLine[4])));
-        	//make method below recursive just for fun and also to make it more efficent maybe since no longer three loops
-        	for(Node paneChildren: gridPane.getChildren()) {
-        		ObservableList<Node> smallPane = (ObservableList<Node>)((Parent) paneChildren).getChildrenUnmodifiable();
-        		for(Node eachPane: smallPane) {
-        			if((eachPane.getClass()== new JFXButton().getClass()) &&((paneChildren.getId()).equals(nextLine[4].replaceAll("\\s", "")))) {
-        				System.out.println("hello");
-        				//due to half open intervals, I subtracted minute to make it work
-        				//Also, used a library called JODA-TIME to help me deal with overlaps easily 
-        				Interval interval = new Interval( start_date.plusMinutes(-1), end_date.plusMinutes(-1) );
-        				System.out.println("hello");
-        				Interval interval2 = new Interval( DateTime.parse(nextLine[1]), DateTime.parse(nextLine[2]));
-        				System.out.println("reached" + interval.overlaps(interval2));
-        				System.out.println(interval +"\n" + interval2);
-        				System.out.println(interval.isEqual(interval2));
-        				System.out.println(interval.overlaps(interval2));
-        				System.out.println(interval2.overlaps(interval));
+			FileReader readfile = new FileReader(file);
+			CSVReader read = new CSVReaderBuilder(readfile).build();
+			List<String[]> allUserData = read.readAll(); 
+			for(int j = 1; j<allUserData.size(); j++) {
+				String nextLine[] = allUserData.get(j);
+				if(!(nextLine[0].equals("CHECKED_OUT"))) {
 
-        				if((interval.overlaps(interval2))|| (interval2.overlaps(interval))||(interval.isEqual(interval2)) || (end_date.isEqual(DateTime.parse(nextLine[1])))) {
-        					((JFXButton)eachPane).setText("Room Currently Booked");
-        					((JFXButton)eachPane).setLayoutX(50);
-        					((JFXButton)eachPane).setStyle("-fx-background-color: #FF4000;");
-        					((JFXButton)eachPane).setOnAction(e->{{
-        						System.out.println("wip-waitlist");
-        					}});
-        				}
-        			}
-        		}
-        	}
-        	}
-        }
-        
+
+					//make method below recursive just for fun and also to make it more efficent maybe since no longer three loops
+					for(Node paneChildren: gridPane.getChildren()) {
+						ObservableList<Node> smallPane = (ObservableList<Node>)((Parent) paneChildren).getChildrenUnmodifiable();
+						for(Node eachPane: smallPane) {
+							if((eachPane.getClass()== new JFXButton().getClass()) &&((paneChildren.getId()).equals(nextLine[4].replaceAll("\\s", "")))) {
+
+								//due to half open intervals, I subtracted minute to make it work
+								//Also, used a library called JODA-TIME to help me deal with overlaps easily 
+								Interval interval = new Interval( start_date.plusMinutes(-1), end_date.plusMinutes(-1) );
+
+								Interval interval2 = new Interval( DateTime.parse(nextLine[1]), DateTime.parse(nextLine[2]));
+
+
+
+
+
+
+								if((interval.overlaps(interval2))|| (interval2.overlaps(interval))||(interval.isEqual(interval2)) || (end_date.isEqual(DateTime.parse(nextLine[1])))) {
+									((JFXButton)eachPane).setText("Room Currently Booked");
+									((JFXButton)eachPane).setLayoutX(50);
+									((JFXButton)eachPane).setStyle("-fx-background-color: #FF4000;");
+									((JFXButton)eachPane).setOnAction(e->{{
+
+									}});
+								}
+							}
+						}
+					}
+				}
+			}
+
 		}catch(IOException | CsvException e) {
-			
+
 		}
 
 
-		
-		
+
+
 	}
 }

@@ -39,7 +39,7 @@ public class DateHotel extends DataToStringArray implements Initializable, Pages
 		StartEnd_Send();
 	}
 	//populates abstract class DataToString before it loads that page.
-	
+
 	//added class just so code is more clean
 	public class MinDay {
 		LocalDate date;
@@ -48,21 +48,21 @@ public class DateHotel extends DataToStringArray implements Initializable, Pages
 		}
 		//CALLBACK function below
 		final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
-		     public DateCell call(final DatePicker datePicker) {
-		         return new DateCell() {
-		             @Override 
-		             public void updateItem(LocalDate item, boolean empty) {
-		                 super.updateItem(item, empty);
-		                 if(item.isBefore(date)) {
-		                	 //this refers to total datecell node itself
-		                	 this.setDisable(true);
-		                	 this.setStyle("-fx-background-color: #FFB84C;");		           
-		                	 }
-		             }
-		         };
-		     }
-		 };
-		
+			public DateCell call(final DatePicker datePicker) {
+				return new DateCell() {
+					@Override 
+					public void updateItem(LocalDate item, boolean empty) {
+						super.updateItem(item, empty);
+						if(item.isBefore(date)) {
+							//this refers to total datecell node itself
+							this.setDisable(true);
+							this.setStyle("-fx-background-color: #FFB84C;");		           
+						}
+					}
+				};
+			}
+		};
+
 	}
 	public class MaxDay extends MinDay{
 		LocalDate date;
@@ -72,32 +72,32 @@ public class DateHotel extends DataToStringArray implements Initializable, Pages
 		}
 		//CALLBACK function below
 		final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
-		     public DateCell call(final DatePicker datePicker) {
-		         return new DateCell() {
-		             @Override 
-		             public void updateItem(LocalDate item, boolean empty) {
-		                 super.updateItem(item, empty);
-		                 if(item.isBefore(date.plusDays(1L))) {
-		                	 //this refers to total datecell node itself
-		                	 this.setDisable(true);
-		                	 this.setStyle("-fx-background-color: #FFB84C;");		           
-		                	 }
-		             }
-		         };
-		     }
-		 };
-		
+			public DateCell call(final DatePicker datePicker) {
+				return new DateCell() {
+					@Override 
+					public void updateItem(LocalDate item, boolean empty) {
+						super.updateItem(item, empty);
+						if(item.isBefore(date.plusDays(1L))) {
+							//this refers to total datecell node itself
+							this.setDisable(true);
+							this.setStyle("-fx-background-color: #FFB84C;");		           
+						}
+					}
+				};
+			}
+		};
+
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		startDate.setDayCellFactory(new MinDay(date).dayCellFactory);
-//        startDate.setStyle(".today{'-fx-background-color: black;'}");
+		//        startDate.setStyle(".today{'-fx-background-color: black;'}");
 
 		startDate.setValue(date);
-//		startDate.setValue(null);
+		//		startDate.setValue(null);
 		endDate.setDayCellFactory(new MaxDay(date).dayCellFactory);
 		endDate.setValue(date.plusDays(1L));
-		System.out.println(date);
+
 	}
 	public void datesChanged(ActionEvent event) {
 		endDate.setDayCellFactory(new MaxDay(startDate.getValue()).dayCellFactory);
@@ -114,15 +114,15 @@ public class DateHotel extends DataToStringArray implements Initializable, Pages
 		String endString = endObj.toString();
 		int daysBetween = (int) ChronoUnit.DAYS.between(startObj, endObj);
 		String days = String.valueOf(daysBetween);
-		System.out.println(startString + "\n" + endString);
-		System.out.println(days);
+
+
 		Data.add(startString);
 		Data.add(endString);
 		Data.add(days);
-		System.out.println(Data);
-	}
-	
-	
 
-	
+	}
+
+
+
+
 }

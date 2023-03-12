@@ -37,37 +37,37 @@ public class PostBill extends DataToStringArray implements Pages, Initializable{
 		try {
 			readfile = new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 			CSVReader read = new CSVReaderBuilder(readfile).build();
-	        List<String[]> allUserData = read.readAll(); 
-	        
-	        for(String[] i: allUserData) {
+			List<String[]> allUserData = read.readAll(); 
+
+			for(String[] i: allUserData) {
 				for(String[] sendLine: sentLine) {
-					
+
 					if(i[0].equals(sendLine[0])) {
-					System.out.println(sendLine[sendLine.length-1]);
-					if(sendLine[sendLine.length-1].equals("ONTIME")) {
-						header.setText("Cancelled Succesfully");
-						content.setText("Refund Amount(100%): " + sendLine[sendLine.length-3]);
-						break;
-					} else if(sendLine[sendLine.length-1].equals("LATE")) {
-						header.setText("Cancelled Succesfully");
-						content.setText("Original Amount: " + sendLine[sendLine.length-3] + "\nRefund Amount(70%): " + Double.parseDouble(sendLine[sendLine.length-3])*0.7);
-						break;
-					} else {
-						System.out.println("REACHED");
-						rwdpts = Double.parseDouble(sendLine[sendLine.length-3]);
-						System.out.println(rwdpts);
-						CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
-						System.out.println("REACHED");
-	        			i[1] = String.valueOf(Double.parseDouble(i[1])+rwdpts);
-	        			writer.writeAll(allUserData);
-	        			writer.flush();
-	        			writer.close();
-						content.setText(content.getText() + ""+rwdpts + "\nYour Total Reward Points: " + i[1]);
-						break;
-					}	
+
+						if(sendLine[sendLine.length-1].equals("ONTIME")) {
+							header.setText("Cancelled Succesfully");
+							content.setText("Refund Amount(100%): " + sendLine[sendLine.length-3]);
+							break;
+						} else if(sendLine[sendLine.length-1].equals("LATE")) {
+							header.setText("Cancelled Succesfully");
+							content.setText("Original Amount: " + sendLine[sendLine.length-3] + "\nRefund Amount(70%): " + Double.parseDouble(sendLine[sendLine.length-3])*0.7);
+							break;
+						} else {
+
+							rwdpts = Double.parseDouble(sendLine[sendLine.length-3]);
+
+							CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
+
+							i[1] = String.valueOf(Double.parseDouble(i[1])+rwdpts);
+							writer.writeAll(allUserData);
+							writer.flush();
+							writer.close();
+							content.setText(content.getText() + ""+rwdpts + "\nYour Total Reward Points: " + i[1]);
+							break;
+						}	
 					}
 				}
-	        }
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,9 +78,9 @@ public class PostBill extends DataToStringArray implements Pages, Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 }
 //reward points -> generate discounts essentially we will add a text field at submit cc info and what nit 
 //add for every login

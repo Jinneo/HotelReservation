@@ -29,7 +29,7 @@ public class Loadpage implements Initializable, Pages {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//will work on more efficent method later
-		System.out.println("loading...");
+
 		FadeTransition newFade = new FadeTransition(Duration.seconds(3), img);
 		newFade.setFromValue(0);
 		newFade.setToValue(1);
@@ -42,7 +42,7 @@ public class Loadpage implements Initializable, Pages {
 			newFade1.setCycleCount(1);
 			newFade1.play();
 			topHeading.setVisible(true);
-			
+
 			FadeTransition newFade2 = new FadeTransition(Duration.seconds(1), botHeading);
 			newFade2.setFromValue(0);
 			newFade2.setToValue(1);
@@ -60,10 +60,10 @@ public class Loadpage implements Initializable, Pages {
 		}});
 		button.setOnAction(event->{{
 			Main.switchOut(event, terms);
-				
+
 
 		}});
-		
+
 	}
 
 }

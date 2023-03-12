@@ -46,7 +46,7 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	TextField passAdmin;
 	@FXML
 	Label checkLabel;
-	
+
 	@FXML
 	public void registerStart(ActionEvent event) throws IOException {
 		Main.switchOut(event, registrationpage);
@@ -58,21 +58,21 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 		currDate.setText(date.toString());
 		FileReader readfile = new FileReader(file);
 		CSVReader read = new CSVReaderBuilder(readfile).build();
-        List<String[]> allUserData = read.readAll(); 
-        for(String[] nextLine : allUserData) {
-        try {	
-        if(date.isAfter(LocalDate.parse(nextLine[2]))) {
-		CSVWriter writer = new CSVWriter(new FileWriter(file));
-		System.out.println(nextLine.length);
-		nextLine[0] = "CHECKED_OUT";
-		writer.writeAll(allUserData);
-		writer.flush();
-		writer.close();
-        }
-        } catch(DateTimeParseException e) {
-        	
-        }
-        }
+		List<String[]> allUserData = read.readAll(); 
+		for(String[] nextLine : allUserData) {
+			try {	
+				if(date.isAfter(LocalDate.parse(nextLine[2]))) {
+					CSVWriter writer = new CSVWriter(new FileWriter(file));
+
+					nextLine[0] = "CHECKED_OUT";
+					writer.writeAll(allUserData);
+					writer.flush();
+					writer.close();
+				}
+			} catch(DateTimeParseException e) {
+
+			}
+		}
 	}
 	@FXML
 	public void loginStart(ActionEvent event) throws IOException {
@@ -82,13 +82,13 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			if(arg0.sameFile(new URL("file:/Users/pvadlamani/git/repository/hotel_reservation/bin/application/startpage.fxml"))){
-			currDate.setText(date.toString());
+				currDate.setText(date.toString());
 			}  
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
-			System.out.println(e);
+
 		}
-		
+
 	}
 	@FXML
 	public void userLogin(ActionEvent event) {
@@ -101,34 +101,34 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 	@FXML
 	public void checkAdmin(ActionEvent event) {
 		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminData.csv");
-	    try {
-	    	boolean validated = false;
-	        FileReader outputfile = new FileReader(file);
-	        CSVReader read = new CSVReaderBuilder(outputfile).build();
-	        List<String[]> allUserData = read.readAll(); 
-	        for(String[] i: allUserData) {
-	        	System.out.println(i[0]);
-	        	if(i[0].equals(userAdmin.getText())) {
-	        		if(i[1].equals(passAdmin.getText())) {
-	        			validated = true;
-	        			adminSuccess = userAdmin.getText();
-	        			Main.switchOut(event, adminpanel);
-	        			
-	        			break;
-	        		}
-	        		
-	        	}
-	        }
-	        if(!validated) {
-	        	checkLabel.setText("incorrect try again");
-	        } 
-	    }
-	    catch (IOException | CsvException e) {
-	        // TODO Auto-generated catch block
-	        e.printStackTrace();
-	    }
-	}
-	
+		try {
+			boolean validated = false;
+			FileReader outputfile = new FileReader(file);
+			CSVReader read = new CSVReaderBuilder(outputfile).build();
+			List<String[]> allUserData = read.readAll(); 
+			for(String[] i: allUserData) {
 
-	
+				if(i[0].equals(userAdmin.getText())) {
+					if(i[1].equals(passAdmin.getText())) {
+						validated = true;
+						adminSuccess = userAdmin.getText();
+						Main.switchOut(event, adminpanel);
+
+						break;
+					}
+
+				}
+			}
+			if(!validated) {
+				checkLabel.setText("incorrect try again");
+			} 
+		}
+		catch (IOException | CsvException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+
 }

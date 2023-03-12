@@ -38,7 +38,7 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
 	public TextField prevID;
 	@FXML
 	public TextField discountID;
-	
+
 	public void Extras_Send() {
 		for(int i = 0; i<checkBox.size(); i++) {
 			Data.add(String.valueOf(checkBox.get(i).isSelected()) + checkBox.get(i).getText().substring(0, checkBox.get(i).getText().indexOf('~')-1));
@@ -50,46 +50,46 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
 	public void checkID() throws IOException, CsvException {
 		File permfile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 		CSVReader permread = new CSVReaderBuilder(new FileReader(permfile)).build();
-        List<String[]> permUserData = permread.readAll(); 
-        for(String[] i: permUserData) {
-        	if(prevID.getText().equals(i[0])) {
-        		prevIDText = prevID.getText();
-        		isValidID = true;
-        		break;
-        	}
-        }
+		List<String[]> permUserData = permread.readAll(); 
+		for(String[] i: permUserData) {
+			if(prevID.getText().equals(i[0])) {
+				prevIDText = prevID.getText();
+				isValidID = true;
+				break;
+			}
+		}
 	}
 	public void checkDiscount() throws IOException, CsvException, ClassNotFoundException {
 		pf10 obj10 = new pf10();
 		pf15 obj15 = new pf15();
 		File permfile = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/discount.csv");
 		CSVReader discount = new CSVReader(new FileReader(permfile));
-        List<String[]> discountData = discount.readAll(); 
-        for(String[] i: discountData) {
-        	if(discountID.getText().equals(i[0])) {
-        		//System.out.println("HELLO");
-        		System.out.println(Class.forName(i[1]).equals(obj10.getClass()));
-        		System.out.println(Class.forName(i[1]));
-        		System.out.println(obj10.getClass());
-        		//System.out.println(i[0]);
-        		
-        		if(Class.forName(i[1]).equals(obj10.getClass())) {
-        			discountAmnt = 0.10;
-        		} else if(Class.forName(i[1]).equals(obj15.getClass())) {
-        			discountAmnt = 0.15;
-        		} else {
-        			discountAmnt = 0.2;
-        		}
-        		System.out.println(discountAmnt);
-        		isValidDiscount = true;
-        		CSVWriter writer = new CSVWriter(new FileWriter(permfile));
-        		i[0] = "USED";
-    			writer.writeAll(discountData);
-    			writer.flush();
-    			writer.close();
-        		break;
-        	}
-        }
+		List<String[]> discountData = discount.readAll(); 
+		for(String[] i: discountData) {
+			if(discountID.getText().equals(i[0])) {
+				//
+
+
+
+				//
+
+				if(Class.forName(i[1]).equals(obj10.getClass())) {
+					discountAmnt = 0.10;
+				} else if(Class.forName(i[1]).equals(obj15.getClass())) {
+					discountAmnt = 0.15;
+				} else {
+					discountAmnt = 0.2;
+				}
+
+				isValidDiscount = true;
+				CSVWriter writer = new CSVWriter(new FileWriter(permfile));
+				i[0] = "USED";
+				writer.writeAll(discountData);
+				writer.flush();
+				writer.close();
+				break;
+			}
+		}
 	}
 	@FXML
 	public void benefits(ActionEvent event) throws IOException, CsvException, ClassNotFoundException {
@@ -98,21 +98,21 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
 		checkDiscount();
 		Main.switchOut(event, totalbill);	    
 	}
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println("Hello");
+
 		for(int i = 0; i<checkBox.size(); i++) {
-			System.out.println(ExtraServicesPrices);
+
 			checkBox.get(i).setText(checkBox.get(i).getText() + " ~ " + (ExtraServicesPrices.get(ExtraServicesPrices.keySet().toArray()[i])));
 		}
-		System.out.println(ExtraServicesPrices.keySet().toArray().length);
+
 		for(int i = 0; i<radioBtns.size(); i++) {
 			radioBtns.get(i).setText(radioBtns.get(i).getText() + " ~ " + ExtraServicesPrices.get(ExtraServicesPrices.keySet().toArray()[i+radioBtns.size()-1]));
 		}
 
-		
-		
+
+
 	}
 
 }
