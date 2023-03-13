@@ -33,8 +33,16 @@ public class PostBill extends DataToStringArray implements Pages, Initializable{
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		//bug where sometimes sentLine has a length of two when its only supposed to one due to filter
+		//However, the two things from sentLine are just the same data for some reason 
+		//not sure why or really consistently when it happens but it does..
+		
 		FileReader readfile;
 		try {
+			//below essentially reads permanent record CSV file -- then it compares it to the filtered out data which was sent to the abstract class "DataToStringArray"
+			//once it finds a match between both of them, and accordingly gathers info on whether its late(cancel late), on time(cancel early), or neither and just checking out
+			//ONLY CHECKING OUT -> REWARD POINTS
+			//REWARD POINTS = TOTAL COST(simple formula)
 			readfile = new FileReader("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv");
 			CSVReader read = new CSVReaderBuilder(readfile).build();
 			List<String[]> allUserData = read.readAll(); 

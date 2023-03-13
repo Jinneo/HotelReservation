@@ -99,6 +99,10 @@ public class Hotel extends DataToStringArray implements Initializable, Pages  {
 		Main.switchOut(event, adminlogin);
 	}
 	@FXML
+	public void goBackHome(ActionEvent event) {
+		Main.switchOut(event, startpage);
+	}
+	@FXML
 	public void checkAdmin(ActionEvent event) {
 		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminData.csv");
 		try {

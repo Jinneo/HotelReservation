@@ -116,18 +116,3 @@ public class Extras extends DataToStringArray implements Initializable, Pages {
 	}
 
 }
-//<fx:define>
-//<ArrayList fx:id="checkBox" >
-//    <fx:reference source="TV"/>
-//    <fx:reference source="RoomService"/>
-//    <fx:reference source="PoolAccess"/>
-//</ArrayList>
-//</fx:define>
-//<fx:define>
-//<ArrayList fx:id="radioBtns" >
-//    <fx:reference source="RegularMealPlan"/>
-//    <fx:reference source="PremiumMealPlan"/>
-//    <fx:reference source="NoMembership"/>
-//    <fx:reference source="Membership"/>
-//</ArrayList>
-//</fx:define>

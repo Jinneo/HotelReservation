@@ -55,32 +55,7 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 	boolean ifEnoughPts = true;
 	@Override
 	public void userinterface() {
-		// add features
-		// - cancelLate, cancel reg, check in/check in out reg, terms and condition
-		// add warning to check-in that after u check in you will no longer be able to cancel reservation, and will be refunded no money if you leave early
-		//generate discn with rwd pts
-
-		//when will reward poitns b added
-		//added at end of jit
-		//user starts off with 0 rwd pts
-		//perm record -> 0 rwd pts
-		//user first thing ends and goes to CHECK_OUT
-		//then, RWD Pts collected from prm record & current rcrd for now we will do just rwd pts = total cost
-
-		//then when user LOGINS in, there are new buttons created for discount shit below other fats.
-		//that goes through perma record & fetches the rwd based on connection
-
-		//then when check out happens it determines the RWD points locally, and then adds that to according fitfat sr
-
-		//ADD SYSTEM TO CHECK BTNS BETWEEN RESERVATIONS
-
-
-		//FIX-- cancel DOES NOT give reward pts make sure
-		//ADD LABELS FOR RESERVATIONS TO SHOW WHICH ONES THEY R 
-
-		//bug where it duplicates twice idk why
-
-
+		//four main buttons - cancelLate, cancel reg, check in/check in out reg
 
 
 		int check = 0;

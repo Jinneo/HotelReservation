@@ -177,13 +177,13 @@ public class Admin extends DataToStringArray implements Pages, Initializable{
 				//
 				if(nextLine[0].equals(addPTS)) {
 					CSVWriter adminwriter = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/adminuserlog.csv",true));
-					String[] adminLog = new String[]{adminSuccess, "changed", nextLine[0], "points from", nextLine[1], "to", String.valueOf(Integer.parseInt(nextLine[1]) + pts)};
+					String[] adminLog = new String[]{adminSuccess, "changed", nextLine[0], "points from", nextLine[1], "to", String.valueOf(Double.parseDouble(nextLine[1]) + pts)};
 					adminwriter.writeNext(adminLog);
 					adminwriter.close();
 
 					CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
 
-					nextLine[1] = String.valueOf(Integer.parseInt(nextLine[1]) + pts);
+					nextLine[1] = String.valueOf(Double.parseDouble(nextLine[1]) + pts);
 					permausers.add(nextLine[0]+ " - " + nextLine[1]);
 					writer.writeAll(allUserData);
 					writer.flush();

@@ -49,8 +49,7 @@ public class Login extends DataToStringArray implements Pages{
 					for(String[] nextLine : allUserData) {
 						if(loginField.getText().equals(nextLine[0]) && !(date.isAfter(LocalDate.parse(nextLine[2])))) {
 							sentLine.add(nextLine);
-							//add method to check the text if checked_ alr 
-							//below checks to see if due date alr passed and if it did then L
+							
 						} 
 						//				        
 					}
@@ -80,6 +79,10 @@ public class Login extends DataToStringArray implements Pages{
 		Main.switchOut(event, loginsuccess);
 	}
 	public void load(ActionEvent event) throws IOException {
+		Main.switchOut(event, startpage);
+	}
+	@FXML
+	public void goBackHome(ActionEvent event) {
 		Main.switchOut(event, startpage);
 	}
 
