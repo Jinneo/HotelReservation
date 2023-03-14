@@ -122,3 +122,6 @@ Two Bedroom, No View
 "CHECKED_OUT","2023-04-01","2023-04-02","1","Room A","Rate: 350$ a night
 Four Bedroom, Ocean and City View
 ","falseTV","falseRoom Service","falsePool Access","trueRegular Meal Plan","falsePremium Meal Plan","trueNo Membership","falseMembership","350.0","true","PLACE_HOLDER"
+"CHECKED_OUT","2023-04-01","2023-04-02","1","Room A","Rate: 350$ a night
+Four Bedroom, Ocean and City View
+","trueTV","trueRoom Service","truePool Access","falseRegular Meal Plan","truePremium Meal Plan","falseNo Membership","trueMembership","615.0","true","PLACE_HOLDER"
