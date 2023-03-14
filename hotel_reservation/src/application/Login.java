@@ -28,7 +28,7 @@ public class Login extends DataToStringArray implements Pages{
 	TextField loginField;
 	@FXML
 	Label errorMessage;
-	boolean login_Worked;
+	boolean login_Worked = false;
 	public void checkLogin(ActionEvent event) throws IOException {
 
 		File file = new File("/Users/pvadlamani/git/repository/hotel_reservation/src/application/userData.csv");
@@ -55,8 +55,6 @@ public class Login extends DataToStringArray implements Pages{
 					}
 					loginSuccess = loginField.getText();
 					loginSuccesful(event);
-				}else {
-					login_Worked = false;
 				}
 
 			}

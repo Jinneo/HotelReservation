@@ -237,12 +237,12 @@ public class LoginSuccess extends DataToStringArray implements Buttons, Initiali
 				if(nextLine[0].equals(loginSuccess)) {
 					CSVWriter writer = new CSVWriter(new FileWriter("/Users/pvadlamani/git/repository/hotel_reservation/src/application/permaRecord.csv"));
 
-					if((Integer.parseInt(nextLine[1]) -amount)<0) {
+					if((Double.parseDouble(nextLine[1]) -amount)<0) {
 						ifEnoughPts = false;
 					} else {
 						ifEnoughPts = true;
 
-						nextLine[1] = String.valueOf(Integer.parseInt(nextLine[1])-amount);
+						nextLine[1] = String.valueOf(Double.parseDouble(nextLine[1])-amount);
 						sendPMS = nextLine[1];
 					}
 					writer.writeAll(allUserData);
